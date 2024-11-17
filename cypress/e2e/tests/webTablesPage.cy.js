@@ -1,4 +1,4 @@
-import elementsPage from '../pages/elementsPage';
+import webTablesPage from '../pages/webTablesPage';
 
 describe('Cenário 03 - Web Tables', () => {
   const recordData = {
@@ -24,20 +24,20 @@ describe('Cenário 03 - Web Tables', () => {
   });
 
   it('Adicionar, editar e deletar um registro', () => {
-    elementsPage.navigateToWebTables();
+    webTablesPage.navigateToWebTables();
 
     // Adicionar um novo registro
-    elementsPage.addNewRecord(recordData);
+    webTablesPage.addNewRecord(recordData);
 
     // Editar o registro adicionado
-    elementsPage.editRecord(recordData, updatedRecordData);
+    webTablesPage.editRecord(recordData, updatedRecordData);
 
     // Deletar o registro atualizado
-    elementsPage.deleteRecord(updatedRecordData);
+    webTablesPage.deleteRecord(updatedRecordData);
   });
 
   it('Criar e deletar 12 registros dinamicamente', () => {
-    elementsPage.navigateToWebTables();
+    webTablesPage.navigateToWebTables();
 
     // Criar 12 registros dinamicamente
     Array.from({ length: 12 }).forEach((_, index) => {
@@ -49,10 +49,10 @@ describe('Cenário 03 - Web Tables', () => {
         salary: `${30000 + index * 1000}`,
         department: `Dept${index + 1}`,
       };
-      elementsPage.addNewRecord(dynamicData);
+      webTablesPage.addNewRecord(dynamicData);
     });
 
     // Deletar todos os registros
-    elementsPage.deleteAllRecords();
+    webTablesPage.deleteAllRecords();
   });
 });

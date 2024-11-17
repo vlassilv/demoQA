@@ -1,4 +1,4 @@
-class ElementsPage {
+class WebTablesPage {
     navigateToWebTables() {
       cy.get('.card').contains('Elements').click();
       cy.get('span').contains('Web Tables').click();
@@ -37,4 +37,4 @@ class ElementsPage {
     }
   }
   
-  export default new ElementsPage();
+  export default new WebTablesPage();

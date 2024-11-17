@@ -1,4 +1,4 @@
-class InteractionsPage {
+class SortablePage {
     navigateToSortable() {
       cy.get('.card').contains('Interactions').click();
       cy.get('span').contains('Sortable').click();
@@ -23,4 +23,4 @@ class InteractionsPage {
     }
   }
   
-  export default new InteractionsPage();
+  export default new SortablePage();
