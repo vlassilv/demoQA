@@ -1,8 +1,9 @@
 import BrowserWindows from '../pages/browserWindows';
+import homePage from '../pages/homePage';
 
 describe('Cenário 02 - Browser Windows', () => {
   beforeEach(() => {
-    cy.visit('https://demoqa.com/');
+    homePage.visit();
     cy.stubWindowOpen(); // Adiciona o stub para capturar a nova janela
   });
 

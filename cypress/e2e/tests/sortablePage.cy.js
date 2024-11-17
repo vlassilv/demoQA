@@ -1,9 +1,10 @@
+import homePage from '../pages/homePage';
 import sortablePage from '../pages/sortablePage';
 import '@4tw/cypress-drag-drop';
 
 describe('Cenário 05 - Sortable List', () => {
   beforeEach(() => {
-    cy.visit('https://demoqa.com/');
+    homePage.visit();
   });
 
   it('Reorganizar os elementos da lista em ordem crescente', () => {

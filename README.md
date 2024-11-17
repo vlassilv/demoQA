@@ -25,7 +25,7 @@ Siga estas etapas para clonar o repositório e instalar as dependências:
 
 ### Clonar o repositório
 ```
-git clone https://github.com/vlassilv/desafioTech01.git
+git clone https://github.com/vlassilv/demoQA.git
 ```
 ### Navegar para o diretório do projeto
 ```

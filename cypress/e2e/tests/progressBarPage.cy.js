@@ -1,8 +1,9 @@
+import homePage from '../pages/homePage';
 import progressBarPage from '../pages/progressBarPage';
 
 describe('Cenário 04 - Progress Bar', () => {
   beforeEach(() => {
-    cy.visit('https://demoqa.com/');
+    homePage.visit();
   });
 
   it('Validar controle da Progress Bar', () => {

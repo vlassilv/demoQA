@@ -1,8 +1,9 @@
 import formsPage from '../pages/formsPage';
+import homePage from '../pages/homePage';
 
 describe('Cenário 01 - Forms', () => {
   beforeEach(() => {
-    cy.visit('https://demoqa.com/');
+    homePage.visit();
   });
 
   it('Preenche e submete o formulário', () => {

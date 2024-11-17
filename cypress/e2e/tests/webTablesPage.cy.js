@@ -1,3 +1,4 @@
+import homePage from '../pages/homePage';
 import webTablesPage from '../pages/webTablesPage';
 
 describe('Cenário 03 - Web Tables', () => {
@@ -20,7 +21,7 @@ describe('Cenário 03 - Web Tables', () => {
   };
 
   beforeEach(() => {
-    cy.visit('https://demoqa.com/');
+    homePage.visit();
   });
 
   it('Adicionar, editar e deletar um registro', () => {
