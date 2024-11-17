@@ -29,7 +29,7 @@ git clone https://github.com/vlassilv/demoQA.git
 ```
 ### Navegar para o diretório do projeto
 ```
-cd desafioTech01-cypress
+cd demoQA-cypress
 ```
 ### Initialize node project and install cypress
 ```
@@ -42,27 +42,27 @@ npx cypress open
 ```
 > Após abrir o cypress, será criado uma estrutura básica de pastas do Cypress
 
-/DemoQA
+    /DemoQA
 
-  ├── cypress
+    ├── cypress
 
-    ├── fixtures
+        ├── fixtures
 
-    ├── support
+        ├── support
 
-  ├── node_modules
+    ├── node_modules
 
-  ├── cypress.config.js
+    ├── cypress.config.js
 
-  ├── package-lock.json
+    ├── package-lock.json
 
-  └── package.json
+    └── package.json
 
-> Essa é uma estrutura básica, pode ser modificada conforme necessidade.
+> Essa é uma estrutura básica, que pode ser modificada conforme necessidade.
 
 ### Instalar o cypress-file-upload, siga estes passos:
 
-Instale a biblioteca usando o npm com o seguinte comando:
+Instale a biblioteca usando o npm com o comando:
 ```
 npm install --save-dev cypress-file-upload
 ```
@@ -72,7 +72,7 @@ import 'cypress-file-upload';
 ```
 ### Cenários de Teste
 
-#### - Feature: Test Browser Windows Page
+#### Feature: Test Browser Windows Page
 #### Scenario: Open a new window and verify its contents
     Given I am on the demoqa homepage
     When I navigate to Alerts, Frame & Windows
@@ -81,7 +81,7 @@ import 'cypress-file-upload';
     Then I verify the new window contains "This is a sample page"
     And I close the new window
 
-#### - Feature: Test Form Page
+#### Feature: Test Form Page
 #### Scenario: Fill and submit the practice form
     Given I am on the demoqa homepage  
     When I navigate to the Forms section  
@@ -92,7 +92,7 @@ import 'cypress-file-upload';
     And I verify that a popup appears
     And I close the popup
 
-#### - Feature: Test Progress Bar
+#### Feature: Test Progress Bar
 #### Scenario: Validate Progress Bar value
     Given I am on the demoqa homepage
     When I navigate to Widgets
@@ -103,7 +103,7 @@ import 'cypress-file-upload';
     And I start the progress bar again
     And I wait until it reaches 100% and reset the progress bar
 
-#### - Feature: Test Sortable Interaction
+#### Feature: Test Sortable Interaction
 #### Scenario: Verify sorting functionality
     Given I am on the demoqa homepage
     When I navigate to Interactions
@@ -111,7 +111,7 @@ import 'cypress-file-upload';
     Then I sort the list items
     And verify that items are in the new order
 
-#### - Feature: Test Web Tables Page
+#### Feature: Test Web Tables Page
 #### Scenario: Add, edit, and delete a record in Web Tables
     Given I am on the demoqa homepage
     When I navigate to Elements
@@ -124,57 +124,43 @@ import 'cypress-file-upload';
 
 ## Estrutura do Projeto
 
-demoQA/
-
-    ├── cypress/
-
-        ├── e2e/
-
-            ├── pages/
-
-                ├── browserWindowsPage.js       # Page Object para interagir com elementos da página Browser Windows
-
-                ├── formPage.js                 # Page Object para interagir com elementos da página Form Page
-
-                ├── homePage.js                 # Page Object para interagir com elementos da página Home Page
-
-                ├── progressBarPage.js          # Page Object para interagir com elementos da página Progress Bar
-
-                ├── sortablePage.js             # Page Object para interagir com elementos da página Sortable
-
-                └── webTablesPage.js            # Page Object para interagir com elementos da página Web Tables
-
-            └── tests/
-
-                ├── browserWindows.cy.js        # Arquivo para o teste de Browser Windows
-
-                ├── formPage.cy.js              # Arquivo para o teste de Form Page
-
-                ├── progressBarPage.cy.js       # Arquivo para o teste de Progress Bar
-
-                ├── sortablePage.cy.js          # Arquivo para o teste de Sortable
-
-                └── webTablesPage.cy.js         # Arquivo para o teste de Web Tables
-
-        ├── fixtures/                           # Pasta para armazenar dados de teste fixos
-
-            └── fileUpload.txt                  # Arquivo de texto para upload
-
-        ├── support/
-
-            ├── commands.js                     # Custom commands para o Cypress
-
-            └── e2e.js                          # Configurações e eventos globais do Cypress
-
-    ├── node_modules/                           # Dependências do projeto (gerado pelo npm)
-
-    ├── .gitignore                              # Arquivo para ignorar arquivos e pastas desnecessárias no Git
-
-    ├── cypress.config.js                       # Configuração principal do Cypress, incluindo specPattern
-
-    ├── package-lock.json                       # Controle das versões instaladas das dependências
-
-    ├── package.json                            # Configuração do projeto Node.js, incluindo dependências e scripts
+    demoQA/
+        ├── cypress/
+            ├── e2e/
+                ├── api/                                # Testes de API
+                    ├── api_pages/
+                        ├── accontPages.js
+                        ├── bookStorePage.js
+                    └── api_tests/
+                        └── ApiTests.cy.js    
+                ├── ui/                                 # Testes de interface (E2E)          
+                    ├── ui_pages/
+                        ├── browserWindowsPage.js       # Page Object para interagir com elementos da página Browser Windows
+                        ├── formPage.js                 # Page Object para interagir com elementos da página Form Page
+                        ├── homePage.js                 # Page Object para interagir com elementos da página Home Page
+                        ├── progressBarPage.js          # Page Object para interagir com elementos da página Progress Bar
+                        ├── sortablePage.js             # Page Object para interagir com elementos da página Sortable
+                        └── webTablesPage.js            # Page Object para interagir com elementos da página Web Tables
+                    └── ui_tests/            
+                        ├── browserWindows.cy.js        # Arquivo para o teste de Browser Windows
+                        ├── formPage.cy.js              # Arquivo para o teste de Form Page
+                        ├── progressBarPage.cy.js       # Arquivo para o teste de Progress Bar
+                        ├── sortablePage.cy.js          # Arquivo para o teste de Sortable   
+                        └── webTablesPage.cy.js         # Arquivo para o teste de Web Tables
+            ├── fixtures/                               # Pasta para armazenar dados de teste fixos
+                ├── books.json                          # Dados de exemplo para livros
+                ├── config.json                         # Configurações específicas para testes            
+                ├── fileUpload.txt                      # Arquivo de texto para upload            
+                └── users.json                          # Dados de exemplo para usuários
+            ├── support/
+                ├── commands.js                         # Custom commands para o Cypress
+                └── e2e.js                              # Configurações e eventos globais do Cypress
+        ├── node_modules/                               # Dependências do projeto (gerado pelo npm)
+        ├── .gitignore                                  # Arquivo para ignorar arquivos e pastas desnecessárias no Git
+        ├── cypress.config.js                           # Configuração principal do Cypress, incluindo specPattern
+        ├── package-lock.json                           # Controle das versões instaladas das dependência
+        ├── package.json                                # Configuração do projeto Node.js, incluindo dependências e scripts
+        └── README.md
 
 ### Descrição das Pastas e Arquivos
 

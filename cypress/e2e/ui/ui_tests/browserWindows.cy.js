@@ -1,5 +1,5 @@
-import BrowserWindows from '../pages/browserWindows';
-import homePage from '../pages/homePage';
+import BrowserWindows from '../ui_pages/browserWindows';
+import homePage from '../ui_pages/homePage';
 
 describe('Cenário 02 - Browser Windows', () => {
   beforeEach(() => {

@@ -1,5 +1,5 @@
-import homePage from '../pages/homePage';
-import webTablesPage from '../pages/webTablesPage';
+import homePage from '../ui_pages/homePage';
+import webTablesPage from '../ui_pages/webTablesPage';
 
 describe('Cenário 03 - Web Tables', () => {
   const recordData = {

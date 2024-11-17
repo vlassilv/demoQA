@@ -1,5 +1,5 @@
-import accountPage from '../pages/accountPage';
-import bookStorePage from '../pages/bookStorePage';
+import accountPage from '../api_pages/accountPage';
+import bookStorePage from '../api_pages/bookStorePage';
 
 describe('API Automation Tests', () => {
   let token;
