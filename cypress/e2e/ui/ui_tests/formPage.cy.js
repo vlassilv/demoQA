@@ -1,30 +1,30 @@
-import formsPage from '../pages/formsPage';
-import homePage from '../pages/homePage';
+import formPage from '../ui_pages/formPage';
+import faker from 'faker';
+import homePage from '../ui_pages/homePage';
 
-describe('Cenário 01 - Forms', () => {
-  beforeEach(() => {
+describe('Formulário DemoQA com Page Object e dados aleatórios', () => {
+  it('Deve preencher e submeter o formulário', () => {
+    // Acessar a página do formulário
     homePage.visit();
-  });
+    // Gerar dados aleatórios com faker
+    const firstName = faker.name.firstName();
+    const lastName = faker.name.lastName();
+    const email = faker.internet.email();
+    const phoneNumber = faker.phone.phoneNumber('##########');
+    const subject = 'Math'; // Você pode modificar para escolher aleatoriamente
+    const hobby = 1; // "Sports" (1), "Reading" (2), "Music" (3)
+    const file = 'arquivo.txt'; // O arquivo precisa estar em cypress/fixtures
 
-  it('Preenche e submete o formulário', () => {
-    const formData = {
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'john.doe@example.com',
-      gender: 'Male',
-      mobile: '1234567890',
-      birthYear: '1990',
-      birthMonth: 'January',
-      birthDay: '10',
-      subjects: 'Maths',
-      hobby: 'Sports',
-      address: '123 Cypress Ave',
-      state: 'NCR',
-      city: 'Delhi',
-    };
+    // Preencher o formulário com dados aleatórios
+    formPage.fillForm(firstName, lastName, email, phoneNumber, subject, hobby, file);
 
-    formsPage.navigateToPracticeForm();
-    formsPage.fillForm(formData);
-    formsPage.submitForm();
+    // Submeter o formulário
+    formPage.submitForm();
+
+    // Verificar popup de sucesso
+    formPage.verifyPopup();
+
+    // Fechar o popup
+    formPage.closePopup();
   });
 });

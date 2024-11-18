@@ -70,6 +70,11 @@ Importe o plugin no arquivo de configuração do Cypress. Abra o arquivo cypress
 ```
 import 'cypress-file-upload';
 ```
+Install Faker
+```
+npm install @faker-js/faker --save-dev
+```
+
 ### Cenários de Teste
 
 #### Feature: Test Browser Windows Page
