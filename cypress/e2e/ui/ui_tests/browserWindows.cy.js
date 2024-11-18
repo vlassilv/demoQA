@@ -1,7 +1,7 @@
 import BrowserWindows from '../ui_pages/browserWindows';
 import homePage from '../ui_pages/homePage';
 
-describe('Cenário 02 - Browser Windows', () => {
+describe('Cenário 02 - Validação da mensagem em Browser Windows', () => {
   beforeEach(() => {
     homePage.visit();
     cy.stubWindowOpen(); // Adiciona o stub para capturar a nova janela

@@ -17,3 +17,5 @@ coverage/
 # Logs and temp files
 *.log
 *.tmp
+
+reports/

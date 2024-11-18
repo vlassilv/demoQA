@@ -1,17 +1,33 @@
 {
   "name": "demoqa",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto de automação de testes utilizando Cypress para testes UI e API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:api": "cypress run --spec 'cypress/e2e/api/api_tests/**/*.cy.js' --reporter cypress-mochawesome-reporter",
+    "test:ui": "cypress run --spec 'cypress/e2e/ui/ui_tests/**/*.cy.js' --reporter cypress-mochawesome-reporter",
+    "test:all": "cypress run --reporter cypress-mochawesome-reporter",
+    "clean:reports": "rm -rf cypress/reports/*",
+    "open:cypress": "cypress open",
+    "install": "npm install"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Cypress",
+    "UI",
+    "API",
+    "Automation"
+  ],
+  "author": "Valmir Santos",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vlassilv/demoqa"
+  },
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.2.5",
     "cypress": "^13.15.2",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.2.3",
+    "cypress-wait-until": "^3.0.2"
   }
 }

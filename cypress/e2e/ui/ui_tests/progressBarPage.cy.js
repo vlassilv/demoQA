@@ -1,5 +1,5 @@
-import homePage from '../pages/homePage';
-import progressBarPage from '../pages/progressBarPage';
+import homePage from '../ui_pages/homePage';
+import progressBarPage from '../ui_pages/progressBarPage';
 
 describe('Cenário 04 - Progress Bar', () => {
   beforeEach(() => {

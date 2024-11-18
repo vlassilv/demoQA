@@ -1,4 +1,4 @@
-# Projeto Cypress - Testes Automatizados - DemoQA
+# Projeto de automação de testes utilizando Cypress para testes UI e API - DemoQA
    Este projeto contém testes automatizados usando [Cypress](https://www.cypress.io/). 
 
 ## Índice
@@ -190,5 +190,7 @@ npx run open
 ### Modo Headless (Sem Interface Gráfica)
 Para rodar os testes em modo headless (útil para CI/CD ou pipelines):
 ```
-npm run test
+npm run test:api
+npm run test:ui
+npm run test:all
 ```

@@ -1,5 +1,5 @@
-import homePage from '../pages/homePage';
-import sortablePage from '../pages/sortablePage';
+import homePage from '../ui_pages/homePage';
+import sortablePage from '../ui_pages/sortablePage';
 import '@4tw/cypress-drag-drop';
 
 describe('Cenário 05 - Sortable List', () => {
